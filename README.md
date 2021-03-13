@@ -11,8 +11,10 @@ If you want to achieve SMOTE oversampling, you only need to open the __SMOTE Ove
 * Extract hate speech in the dataset <br />
   Because we want to generate hate speech, we need to use hate speech to train the generator in SeqGAN. However, our data set contains both hate speech and non-hate speech, so the first step is to extract the hate speech in the data set. the way is:In the __SeqGAN__ folder, __train.txt__ is the original data set file, and we can see a __script.py__ python file. Running this file can extract all the hate speech in train.txt and put it in __train_set.txt__ File.
 * Adjustment parameters <br />
-Also in the SeqGAN folder, we can adjust the parameters in the __config.ini__ file, such as the number of generated hate speech, the number of Monte Carlo searches, the maximum sentence length, the number of epochs, and so on. Try not to change other files.
+Also in the SeqGAN folder, we can adjust the parameters in the __config.ini__ file, such as the number of generated hate speech, the number of Monte Carlo searches, the maximum sentence length, the number of epochs, and so on.__(Here you need to pay attention to the path of the opened file and the path where the file is stored, which may be different.)__ Try not to change other files.
 * Run the SeqGAN model <br /> 
 In order to run the SeqGAN model, just run __main.py__.
 * Generated hate speech  <br />
 The generated hate speech will be stored in the __generated_sentences.txt__ file.
+# SeqGAN based data augmentation 
+We tag the generated hate speech and put it in the original data set to achieve data augmentation. After importing the data-augmentaed data set into 4 classification models, the classification results are obtained. Thus, the impact of data augmentation based on SeqGAN on the performance of hate speech detection can be observed.
